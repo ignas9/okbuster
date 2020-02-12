@@ -89,5 +89,5 @@ okbuster:TweenPosition(UDim2.new(0,0,0,0),"Out","Bounce",0.3,true)
 end
 
 if game.PlaceId == "155615604" then
-
+print("game detection = prisonlife")
 end
