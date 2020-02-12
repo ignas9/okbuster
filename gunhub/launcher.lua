@@ -95,7 +95,7 @@ wait(2)
 okbuster:TweenPosition(UDim2.new(0,0,0,0),"Out","Quad",0.3,true)
 end
 
-if game.PlaceId == "155615604" then
+if game.PlaceId == 155615604 then
 launcher("ok",function()
 print("works")
 end)
