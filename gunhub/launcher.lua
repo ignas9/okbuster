@@ -16,8 +16,8 @@ local GameName = Instance.new("TextLabel")
 local Launch = Instance.new("TextButton")
 local thumbnail = Instance.new("ImageLabel")
 
-ok.Name = "ok"
-ok.Parent = game.CoreGui
+ok.Name = math.random(1,999999)
+ok.Parent = game.Players.LocalPlayer.PlayerGui
 
 Launcher.Name = "Launcher"
 Launcher.Parent = ok
@@ -72,7 +72,14 @@ Launch.TextColor3 = Color3.new(1, 1, 1)
 Launch.TextScaled = true
 Launch.TextSize = 14
 Launch.TextWrapped = true
-Launch.MouseButton1Click:connect(launchScript)
+Launch.MouseButton1Click:connect(function()
+launchScript()
+okbuster:TweenPosition(UDim2.new(0,0,1,0),"Out","Quad",0.3,true)
+wait(1)
+Launcher:TweenPosition(UDim2.new(-1.407,0,0.405,0),"In","Quad",0.5,true)
+wait(1)
+ok:remove()
+end)
 
 thumbnail.Name = "thumbnail"
 thumbnail.Parent = ok
@@ -85,9 +92,11 @@ thumbnail.ScaleType = Enum.ScaleType.Crop
 
 wait(2)
 
-okbuster:TweenPosition(UDim2.new(0,0,0,0),"Out","Bounce",0.3,true)
+okbuster:TweenPosition(UDim2.new(0,0,0,0),"Out","Quad",0.3,true)
 end
 
 if game.PlaceId == "155615604" then
-print("game detection = prisonlife")
+launcher("ok",function()
+print("works")
+end)
 end
